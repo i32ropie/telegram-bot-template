@@ -23,7 +23,9 @@
 
     # Workspace lifecycle hooks
     workspace = {
-      # Runs when the workspace is (re)started
+      onCreate = {
+        create-env-file = "cp .env.sample .env";
+      };
       onStart = {
         docker-build = "docker compose build";
       };
